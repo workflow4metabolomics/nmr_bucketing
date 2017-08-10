@@ -20,17 +20,12 @@
             zipfile '$inputs.zip_file'
         #end if
 
-
         ## Bucket width
         bucket_width $bucket_width
 
         ## Spectra borders
         left_border $left_border
         right_border $right_border
-
-
-        ## Spectra representation
-        graphType $graphType
 
         ## Exclusion zone
         zone_exclusion_choices.choice ${zone_exclusion_choices.choice}
@@ -40,6 +35,9 @@
                 zone_exclusion_right ${i.zone_exclusion_right}
             #end for
         #end if
+
+        ## Spectra representation
+        graphType $graphType
 
         ## Outputs
         logOut $logOut
