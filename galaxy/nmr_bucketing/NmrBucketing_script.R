@@ -251,8 +251,13 @@ NmrBucketing <- function(fileType,fileName,leftBorder = 10.0,rightBorder = 0.5,b
   rownames(variableMetadata) <- rownames(bucketedSpectra)
   colnames(variableMetadata) <- "VariableOrder"
 
-
-  return(list(bucketedSpectra,sampleMetadata,variableMetadata,ppm)) # ,truncatedSpectrum_matrice
+  if (fileType=="zip")
+  {
+    return(list(bucketedSpectra,sampleMetadata,variableMetadata,ppm))
+  } else 
+  {
+    return(list(bucketedSpectra,variableMetadata,ppm))
+  }
 }
 
 
